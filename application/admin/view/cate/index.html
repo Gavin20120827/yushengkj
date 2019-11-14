@@ -1,0 +1,22 @@
+{extend name="index@public/base" /}
+
+
+{block name="content"}
+<table border="1">
+	<tr>
+		<th>id</th>
+		<th>导航名称</th>
+		<th>上级导航</th>
+		<th>操作</th>
+	</tr>
+	{foreach $cate as $v}
+	<tr>
+		<td>{$v.id}</td>
+		<td><?php echo str_repeat('-',$v['level']*5);?>{$v.cate_name}</td>
+		<td>{$v.pid}</td>
+		<td><a href="__ROOT__/admin/cate/1/edit">修改</a>|<a href="__ROOT__/admin/cate/del/{$v.id}">删除</a></td>
+	</tr>
+	{/foreach}
+</table>
+
+{/block}

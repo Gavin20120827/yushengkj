@@ -1,0 +1,35 @@
+{extend name="index@public/base" /}
+
+
+
+{block name="content"}
+
+	<form id="form" action="__ROOT__/admin/product" method="post" enctype="multipart/form-data">
+		<p>产品名称：<input type="text" name="pro_name"></p>
+	  <p>产品图片：<input type="file" name="pro_pic"></p>
+	  <p>产品所属分类：
+	  	<select name="pro_cateid">
+	  		<option value="1">顶级分类</option>
+	  		{foreach $cate as $value}
+	  		<option value="{$value.id}"><?php echo str_repeat('-',$value['level']*5); ?> {$value.cate_name}</option>
+  	        {/foreach}
+	  	</select>
+	  </p>
+		<p>产品内容：<textarea rows="6" cols="20" name="pro_content" id="content">编辑产品</textarea></p>
+		<p style="text-align: center;"><input type="submit" name="submit" value="提交"></p>
+	
+	</form>
+
+	<!-- 编辑器配置文件 -->
+	<script type="text/javascript" src="__ROOT__/static/ue/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="__ROOT__/static/ue/ueditor.all.js"></script>
+
+<script type="text/javascript">
+	var ue = UE.getEditor('content',{
+		initialFrameWidth:700,
+		initialFrameHeight:200,
+	});
+</script>
+
+{/block}

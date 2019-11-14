@@ -1,0 +1,2 @@
+jsonp_bridge_1573197178664_40585909985913465({"body":[{"msg":{"authtype":4,"e":10069547,"msgid":"1531605597518184323","op":1,"sid":"","sinfo":"","st":0,"status":0,"tid":"","tid_authtype":0,"uid":"157319717816489334"},"type":100}],"errinfo":"","n_sn":"708329889","status":0,"tag":0}
+)

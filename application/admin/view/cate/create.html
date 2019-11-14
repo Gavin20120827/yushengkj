@@ -1,0 +1,32 @@
+
+{extend name="index@public/base" /}
+
+
+
+{block name="content"}
+<form id="form" action="{:url('admin/cate')}" method="post">
+	<p>导航名称：<input type="text" name="cate_name"></p>
+
+	<p>导航分类：<select name="cate_type">
+		<option value="1">试水机</option>
+		<option value="2">压花机</option>
+		<option value="3">其他</option>
+	</select>
+	</p>
+
+	<p><input type="submit" name="submit" value="提交"></p>
+
+</form>
+
+<!-- <style type="text/css">
+	#form{
+		margin: 50px auto;
+		text-align: left;
+		padding-left: 50px;
+	}
+
+
+
+
+</style> -->
+{/block}

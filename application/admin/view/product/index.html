@@ -1,0 +1,30 @@
+{extend name="index@public/base" /}
+
+
+{block name="content"}
+<table border="1">
+	<tr>
+		<th>id</th>
+		<th>文章名称</th>
+		<th>文章内容</th>
+		<th>文章图片</th>
+		<th>文章栏目</th>
+		<th>操作</th>
+	</tr>
+	
+	{foreach $pro as $value}
+	<tr>
+		<td>{$value.id}</td>
+		<td>{$value.pro_name}</td>
+		<td><?php echo mb_substr($value['pro_content'],0,5)?></td>
+		<td><img src="{$value.pro_pic}" style="height: 100px"></td>
+		<td>{$value.pro_cateid}</td>
+		<td><a href="__ROOT__/admin/product/{$value.id}/edit">修改</a>|<a href="##">删除</a></td>
+	</tr>
+	{/foreach}
+	
+</table>
+
+{/block}
+
+
